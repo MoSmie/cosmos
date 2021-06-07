@@ -2,8 +2,10 @@ import styled from "styled-components";
 
 export const Tbody = styled.tbody`
   overflow: scroll;
+  overflow-x: hidden;
   display: block;
   height: 240px;
+  width: 495px;
   
   &::-webkit-scrollbar {
     width: 7px;

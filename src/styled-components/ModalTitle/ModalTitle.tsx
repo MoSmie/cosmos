@@ -6,6 +6,7 @@ export const ModalTitle = styled.h2`
   font-weight: bold;
   font-size: 20px;
   line-height: 32px;
+  color: white;
 `;
 
 export default ModalTitle;

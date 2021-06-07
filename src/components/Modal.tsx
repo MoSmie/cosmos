@@ -29,7 +29,7 @@ interface ModalProps {
 }
 
 function Modal(props: ModalProps) {
-  const [spacePadData, setSpacePadData] = useState<
+  const [spacePadData, setSpacePadData] = useState< null |
     Array<ICrewType | ICapsulesType | IStarlink | IRocketType>
   >([]);
   const [isSortedChaged, setIsSortedChanged] = useState(false);
@@ -38,13 +38,18 @@ function Modal(props: ModalProps) {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    console.log("use effect")
     fetchData();
     setAreWeLoading(true);
+    console.log("RENDER use effect")
   }, []);
 
   const fetchData = () => {
-    setError(null)
-    
+    setError(null);
+    console.log("GET feach");
+    console.log(spacePadData);
+
+
     let requestOptions = {
       method: "GET",
     };
@@ -53,6 +58,8 @@ function Modal(props: ModalProps) {
       .then(checkStatus)
       .then((response: Response) => response.json())
       .then((data: any) => {
+        console.log("GET then feach");
+
         if (props.tileToOpen === "crew") {
           setSpacePadData(data as ICrewType[]);
           setSortFields(["name", "agency"]);
@@ -80,6 +87,8 @@ function Modal(props: ModalProps) {
 
   const handleClose = () => {
     props.onClosed(false);
+    setSpacePadData(null)
+    console.log(spacePadData)
   };
 
   const dynamicSort = (property: any, order: any) => {
@@ -103,8 +112,10 @@ function Modal(props: ModalProps) {
     if (sort.descOrAsc === "none") {
       fetchData();
     } else {
+      if (spacePadData !== null) {
       let newSort = spacePadData.sort(dynamicSort(sort.name, sort.descOrAsc));
       setSpacePadData(newSort);
+    }
     }
     setIsSortedChanged(true);
   };

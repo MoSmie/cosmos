@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import FlexCard from "../styled-components/FlexCard";
-import FlexCardHover from "../styled-components/FlexCardHover";
-
+import FlexCardGradient from "../styled-components/FlexCardGradient";
 import FlexCardDescription from "../styled-components/FlexCardDescription";
 
 interface CardProps {
@@ -19,36 +18,22 @@ function Card(props: CardProps) {
   const handleOpen = (route: string) => {
     props.onOpenModal(route);
   };
-  const style = {
-    backgroundImage: `url(/images/${props.tile}.png)`,
-  };
-  const styleHover = {
-    backgroundImage: `linear-gradient(0deg, rgba(43, 34, 74, 0.92) 7.69%, rgba(70, 58, 113, 0.92) 100%), url(/images/${props.tile}.png)`,
-  };
-  // bg={
-  //   process.env.PUBLIC_URL + `/images/arrow-${sortTypes[currentSort]}.svg`
-  //  //imgPath={process.env.PUBLIC_URL + `/images/${props.tile}.png`}
 
-  // }
   return (
     <FlexCard
-      imgPath= {process.env.PUBLIC_URL + `/images/${props.tile}.png`}
       onClick={() => handleOpen(props.tile)}
       onMouseEnter={toggleHover}
       onMouseLeave={toggleHover}
     >
-      {hover && (
-        <FlexCardHover>
-          <FlexCardDescription isHover={hover}>
-            {props.tile}
-          </FlexCardDescription>
-        </FlexCardHover>
-      )}
-      {hover === false && (
-          <FlexCardDescription isHover={hover}>
-            {props.tile}
-          </FlexCardDescription>
-      )}
+      <img
+        src={process.env.PUBLIC_URL + `/images/${props.tile}.png`}
+        alt={props.tile}
+        style={{ objectFit: "cover", maxWidth: "100%", borderRadius: "10px" }}
+      />
+
+      <FlexCardGradient isHover={hover}>
+        <FlexCardDescription isHover={hover}>{props.tile}</FlexCardDescription>
+      </FlexCardGradient>
     </FlexCard>
   );
 }

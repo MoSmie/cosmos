@@ -6,12 +6,12 @@ interface StyledCardProps {
 
 const FlexCardDescription = styled.div<StyledCardProps>`
     align-self: flex-end;
-    color: white;
     font-weight: bold;
     text-transform: capitalize;
     transition: 0.25s;
     transition-timing-function: ease-ease-in-out;
-    padding: ${props => (props.isHover ? "90px" : "20px")};
+    padding-bottom: ${props => (props.isHover ? "90px" : "20px")};
+    position: absolute;
 `
 
 export default FlexCardDescription;
