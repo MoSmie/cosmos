@@ -8,7 +8,7 @@ export const Planet = styled.div`
   height: 375px;
   width: 375px;
   background-size: contain;
-  margin-top: -60px;
+  margin-top: -15px;
   z-index: 100;
 `
 

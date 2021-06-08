@@ -89,11 +89,11 @@ function Animations(props: AnimationsP) {
   
 
   return (
-    <Centered margin="10px">
+    <Centered margin="-7px">
       <Column>
         <div>
-          <Row justifyContent="center">
-            <Cloud id="cloud1"/>
+          <Row justifyContent="center" style={{position: "absolute"}}>
+            <Cloud isFirst id="cloud1"/>
             <Rocket id="rocket"/>
             <Cloud id="cloud2"/>
           </Row>

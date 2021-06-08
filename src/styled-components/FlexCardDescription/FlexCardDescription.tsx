@@ -10,7 +10,7 @@ const FlexCardDescription = styled.div<StyledCardProps>`
     text-transform: capitalize;
     transition: 0.25s;
     transition-timing-function: ease-ease-in-out;
-    padding-bottom: ${props => (props.isHover ? "90px" : "20px")};
+    padding-bottom: ${props => (props.isHover ? "90px" : "24px")};
     position: absolute;
 `
 

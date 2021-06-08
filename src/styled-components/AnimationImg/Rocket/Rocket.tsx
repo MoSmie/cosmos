@@ -10,7 +10,10 @@ export const Rocket = styled.div`
   margin-top: -80px;
   background-repeat: no-repeat;
   z-index: 500;
-
+  position: absolute;
+  top: -7px;
+  margin-right: -370px;
+}
 
 `
 

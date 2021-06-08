@@ -7,8 +7,7 @@ const Gallery = styled.div`
   align-content: space-between;
   height: fit-content;
   justify-content: center;
-  max-width: 380px;
-  padding-right: 110px;
+  max-width: 385px;
 `;
 
 

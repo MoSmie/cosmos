@@ -2,14 +2,16 @@ import styled from "styled-components";
 
 const Button = styled.div`
   display: flex;
+  width: 184px;
   flex-direction: row;
   align-items: center;
-  padding: 12px 32px;
+  padding: 12px 0;
+  justify-content: center;
   background: #7860d7;
   border-radius: 8px;
+  font-size: 16px;
   color: #def4f6;
   text-align: center;
-  background-color: #7860d7;
   font-weight: bold;
   text-align: center;
   transition: 0.3s;
