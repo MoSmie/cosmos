@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/cosmos/static/css/main.c953e680.chunk.css",
-    "main.js": "/cosmos/static/js/main.b069e36a.chunk.js",
-    "main.js.map": "/cosmos/static/js/main.b069e36a.chunk.js.map",
+    "main.js": "/cosmos/static/js/main.6167c0d9.chunk.js",
+    "main.js.map": "/cosmos/static/js/main.6167c0d9.chunk.js.map",
     "runtime-main.js": "/cosmos/static/js/runtime-main.b80ec47d.js",
     "runtime-main.js.map": "/cosmos/static/js/runtime-main.b80ec47d.js.map",
     "static/js/2.2ee9c548.chunk.js": "/cosmos/static/js/2.2ee9c548.chunk.js",
@@ -12,16 +12,13 @@
     "static/js/2.2ee9c548.chunk.js.LICENSE.txt": "/cosmos/static/js/2.2ee9c548.chunk.js.LICENSE.txt",
     "static/media/close.b8dec0ae.svg": "/cosmos/static/media/close.b8dec0ae.svg",
     "static/media/closeH.b3444cf1.svg": "/cosmos/static/media/closeH.b3444cf1.svg",
-    "static/media/cloud.504b6526.svg": "/cosmos/static/media/cloud.504b6526.svg",
     "static/media/logo.d135bb48.svg": "/cosmos/static/media/logo.d135bb48.svg",
-    "static/media/planet.f242c2df.png": "/cosmos/static/media/planet.f242c2df.png",
-    "static/media/rocket.714cbe96.svg": "/cosmos/static/media/rocket.714cbe96.svg",
     "static/media/spinner.00db601c.svg": "/cosmos/static/media/spinner.00db601c.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.b80ec47d.js",
     "static/js/2.2ee9c548.chunk.js",
     "static/css/main.c953e680.chunk.css",
-    "static/js/main.b069e36a.chunk.js"
+    "static/js/main.6167c0d9.chunk.js"
   ]
 }
