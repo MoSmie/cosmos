@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import img from '../../../img/rocket.svg';
 
-
-export const Rocket = styled.div`
-  background-image: url(${img});
+export const Rocket = styled.img`
   background-size: cover;
   height: 140px;
   width: 102px;

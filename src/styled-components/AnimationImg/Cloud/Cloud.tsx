@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import img from '../../../img/cloud.svg';
 
 interface ProprsClound {
   isFirst?: boolean;
 }
 
-export const Cloud = styled.div<ProprsClound>`
-  background-image: url(${img});
+export const Cloud = styled.img<ProprsClound>`
   background-repeat: no-repeat;
   background-size: contain;
   width:  ${props => (props.isFirst ? "55px" : "65px")};

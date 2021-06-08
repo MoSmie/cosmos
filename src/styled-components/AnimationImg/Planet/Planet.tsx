@@ -1,9 +1,6 @@
 import styled from "styled-components";
-import img from '../../../img/planet.png';
 
-
-export const Planet = styled.div`
- background-image: url(${img});
+export const Planet = styled.img`
   background-repeat: no-repeat;
   height: 375px;
   width: 375px;
