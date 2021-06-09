@@ -93,11 +93,11 @@ function Animations(props: AnimationsP) {
       <Column>
         <div>
           <Row justifyContent="center" style={{position: "absolute"}}>
-            <Cloud isFirst id="cloud1" src={process.env.PUBLIC_URL + `/images/cloud.svg`}/>
-            <Rocket id="rocket" src={process.env.PUBLIC_URL + `/images/rocket.svg`}/>
-            <Cloud id="cloud2" src={process.env.PUBLIC_URL + `/images/cloud.svg`}/>
+            <Cloud isFirst id="cloud1" alt={"cloud"} src={process.env.PUBLIC_URL + `/images/cloud.svg`}/>
+            <Rocket id="rocket" alt={"rocket"} src={process.env.PUBLIC_URL + `/images/rocket.svg`}/>
+            <Cloud id="cloud2"  alt={"cloud"} src={process.env.PUBLIC_URL + `/images/cloud.svg`}/>
           </Row>
-          <Planet  id="planet" src={process.env.PUBLIC_URL + `/images/planet.png`}/>
+          <Planet  id="planet" alt={"planet"} src={process.env.PUBLIC_URL + `/images/planet.svg`}/>
         </div>
         <Centered margin={"20px"}>
           <Button onClick={handleRunAnimation}>Launch Rocket!</Button>

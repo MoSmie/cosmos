@@ -8,6 +8,7 @@ import Row from "../styled-components/Row";
 import ModalUnderlay from "../styled-components/ModalUnderlay";
 import ModalWindow from "../styled-components/ModalWindow";
 import ModalContent from "../styled-components/ModalContent";
+import ModalGradient from "../styled-components/ModalGradient";
 import Tbody from "../styled-components/Tbody";
 import Thead from "../styled-components/Thead";
 import ModalTitle from "../styled-components/ModalTitle";
@@ -36,13 +37,8 @@ function Modal(props: ModalProps) {
   const [sortFields, setSortFields] = useState<string[]>([]);
   const [areWeLoading, setAreWeLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
+  let componentMounted = true; // (3) component is mounted
 
-  useEffect(() => {
-    console.log("use effect")
-    fetchData();
-    setAreWeLoading(true);
-    console.log("RENDER use effect")
-  }, []);
 
   const fetchData = () => {
     setError(null);
@@ -58,7 +54,7 @@ function Modal(props: ModalProps) {
       .then(checkStatus)
       .then((response: Response) => response.json())
       .then((data: any) => {
-        console.log("GET then feach");
+        // if (componentMounted){ // (5) is component still mounted?
 
         if (props.tileToOpen === "crew") {
           setSpacePadData(data as ICrewType[]);
@@ -73,13 +69,26 @@ function Modal(props: ModalProps) {
           setSpacePadData(data as IRocketType[]);
           setSortFields(["name", "description"]);
         }
+      
         setAreWeLoading(false);
+    //   }
+    //   return () => { // This code runs when component is unmounted
+    //     componentMounted = false; // (4) set it to false if we leave the page
+    // }
       })
       .catch((err: Error) => {
         setError("Error! Could not load data. Please try again.");
         setAreWeLoading(false);
       });
   };
+
+  useEffect(() => {
+    console.log("use effect")
+    setAreWeLoading(true);
+    fetchData();
+    // const unsubscribe = fetchData(); //subscribe
+    // return unsubscribe; //unsubscribe
+  }, []);
 
   useEffect(() => {
     setIsSortedChanged(false);
@@ -169,6 +178,7 @@ function Modal(props: ModalProps) {
                 ))}
             </Tbody>
           </table>
+          <ModalGradient/>
         </ModalContent>
       </ModalWindow>
     </ModalUnderlay>

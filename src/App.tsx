@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./components/Card";
 import NavBar from "./components/NavBar";
 import Modal from "./components/Modal";
@@ -26,7 +26,7 @@ function App() {
     setTileToOpen(null);
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
     const timeoutID = window.setTimeout(() => {
       gsap.from("#circle", { duration: 2, rotation: 360, repeat: 20 });
 
@@ -47,10 +47,10 @@ function App() {
             <Card tile={tile} onOpenModal={handleOpenModal} key={key} />
           ))}
         </Gallery>
-
         <Animations />
       </MainConetent>
       <Footer />
+      
       {tileToOpen !== null && (
         <Modal tileToOpen={tileToOpen} onClosed={handleCloseModal}></Modal>
       )}

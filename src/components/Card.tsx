@@ -26,7 +26,7 @@ function Card(props: CardProps) {
       onMouseLeave={toggleHover}
     >
       <img
-        src={process.env.PUBLIC_URL + `/images/${props.tile}.png`}
+        src={process.env.PUBLIC_URL + `/images/${props.tile}.jpeg`}
         alt={props.tile}
         style={{ objectFit: "cover", maxWidth: "100%", borderRadius: "10px" }}
       />

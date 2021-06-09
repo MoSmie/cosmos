@@ -4,7 +4,7 @@ export const Tbody = styled.tbody`
   overflow: scroll;
   overflow-x: hidden;
   display: block;
-  height: 240px;
+  height: 220px;
   width: 495px;
   
   &::-webkit-scrollbar {
