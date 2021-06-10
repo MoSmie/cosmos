@@ -84,7 +84,6 @@ function Modal(props: ModalProps) {
   const handleClose = () => {
     props.onClosed(false);
     setSpacePadData(null)
-    console.log(spacePadData)
   };
 
   const dynamicSort = (property: any, order: any) => {
