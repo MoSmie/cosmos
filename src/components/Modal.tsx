@@ -37,14 +37,9 @@ function Modal(props: ModalProps) {
   const [sortFields, setSortFields] = useState<string[]>([]);
   const [areWeLoading, setAreWeLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
-  let componentMounted = true; // (3) component is mounted
-
 
   const fetchData = () => {
     setError(null);
-    console.log("GET feach");
-    console.log(spacePadData);
-
 
     let requestOptions = {
       method: "GET",
@@ -54,7 +49,6 @@ function Modal(props: ModalProps) {
       .then(checkStatus)
       .then((response: Response) => response.json())
       .then((data: any) => {
-        // if (componentMounted){ // (5) is component still mounted?
 
         if (props.tileToOpen === "crew") {
           setSpacePadData(data as ICrewType[]);
@@ -71,10 +65,6 @@ function Modal(props: ModalProps) {
         }
       
         setAreWeLoading(false);
-    //   }
-    //   return () => { // This code runs when component is unmounted
-    //     componentMounted = false; // (4) set it to false if we leave the page
-    // }
       })
       .catch((err: Error) => {
         setError("Error! Could not load data. Please try again.");
@@ -83,11 +73,8 @@ function Modal(props: ModalProps) {
   };
 
   useEffect(() => {
-    console.log("use effect")
     setAreWeLoading(true);
     fetchData();
-    // const unsubscribe = fetchData(); //subscribe
-    // return unsubscribe; //unsubscribe
   }, []);
 
   useEffect(() => {
