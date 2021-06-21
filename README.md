@@ -6,4 +6,3 @@
 Javascript (Node.js), Typescript, Styled-Components and React.
 
 
-https://mosmie.github.io/ms-cosmos/ 
